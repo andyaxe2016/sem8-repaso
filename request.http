@@ -1,1 +1,50 @@
-GET https://andyaxe2016-fuzzy-memory-vxj6pr7gj643q64-8080.preview.app.github.dev
+@server =  https://andyaxe2016-fuzzy-memory-vxj6pr7gj643q64-8080.preview.app.github.dev
+###
+
+GET {{server}}
+###
+GET {{server}}/materias
+
+###
+GET {{server}}/materias/1
+
+###
+
+POST {{server}}/materias
+Content-Type: application/json
+
+{"nombre": "Matematica","creditos":4}
+
+###
+PATCH {{server}}/materias/2
+Content-Type: application/json
+
+{"nombre": "Matematica"}
+
+
+###
+GET {{server}}/materias?size=2
+
+###
+GET {{server}}/materias?size=2&page=0&sort=creditos,desc
+
+
+###
+
+GET {{server}}/especialidades
+
+###
+
+POST {{server}}/especialidades
+Content-Type: application/json
+
+{"nombre": "Desarrollo de Informacion"}
+
+###
+
+GET {{server}}/especialidades/2/materias
+
+###
+
+GET {{server}}/materias/2/especialidades
+
